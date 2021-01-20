@@ -1,0 +1,35 @@
+Go to https://developer.spotify.com/, create an app, give it any name and description.
+Once created, click edit settings and set the "redirect URIs" to https://google.com
+
+Go to dashboard and copy the "client id" and "client secret" and save it somewhere.
+
+Now we need to base64 encode <client id:client secret> with the semicolon included(and without the <>).
+To get this encoded string, go to https://www.base64encode.org/.
+
+(for eg: if your client id is xyz and client secret is abc, then you need to encode xyz:abc)
+
+#Replace {} with client id here
+
+https://accounts.spotify.com/authorize?client_id=cec22c821e4944d79726c52513e9b57c
+&scopes=user-read-currently-playing&response_type=code&redirect_uri=https%3A%2F%2Fgoogle.com
+
+                                
+Copy and paste the url above in a browser. It will open a page where you approve your application to access the currently-played-track.
+Once you accept, it will redirect you to "google.com/code=xxxx". Copy this code and save it somewhere.
+
+Now, In the curl command given below,
+#Replace the first {} with the encoded string 
+#Replace the second {} with the code received
+
+curl -H "Authorization: Basic {}"
+ -d grant_type=authorization_code -d 
+code={} -d
+ redirect_uri=https%3A%2F%2Fgoogle.com https://accounts.spotify.com/api/token
+
+Copy this curl command as a whole and paste it in the command prompt. If everything checks out, it will return some data.
+This will contain the "refresh token" string that you need, so save it.
+
+So now for the secrets.py file, you will have 
+spotify_user_id --> from the accounts page(not the same as client id)
+refresh_token --> obtained above
+base_64 --> the encoded string 
