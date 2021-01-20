@@ -7,10 +7,10 @@ No more wind rushing by, no horns or engines.
 ## Instructions:
 
 Libraries needed:
-requests : pip install requests
+requests : **pip install requests**
 
-pycaw : pip install pycaw
---> Spotify premium is required to mute spotify through the API. To bypass this, the pycaw library is used wherewe mute the spotify aplication through windows itself.
+pycaw : **pip install pycaw**
+-> Spotify premium is required to mute spotify through the API. To bypass this, the pycaw library is used wherewe mute the spotify aplication through windows itself.
 
 
 secrets.py
