@@ -21,7 +21,7 @@ spotify_user_id
 -Can be found at spotify.com/account under "Profile -> Username".
 
 refresh token, base_64
--This one is a bit tricky. All the steps are listed in **help.txt**.
+-This one is a bit tricky. To get these, all the steps are listed in **help.txt**.
 
 After obtaining the values for the strings, place them in secrets.py.
 
