@@ -4,7 +4,7 @@ Spotify ads are not pleasant, so here's a python script which mutes spotify when
 No more wind rushing by, no horns or engines. 
 
 
-Instructions:
+##Instructions:
 
 Libraries needed:
 requests : pip install requests
